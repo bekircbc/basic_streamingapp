@@ -9,9 +9,11 @@ function App() {
   return (
     <div className="App">
       <h1>Video Film Streaming App</h1>
-      <Route path="/" element={<PageAllMeetups />} />
-      <Route path="/newmeetup" element={<PageNewMeetup />} />
-      <Route path="/favorites" element={<PageFavorites />} />
+      <Switch>
+        <Route path="/" element={<PageAllMeetups />} />
+        <Route path="/newmeetup" element={<PageNewMeetup />} />
+        <Route path="/favorites" element={<PageFavorites />} />
+      </Switch>
     </div>
   );
 }
