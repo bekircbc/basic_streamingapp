@@ -1,23 +1,5 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
-// const DummyData = [
-//   {
-//     id: "m1",
-//     title: "This is a first meetup",
-//     image: "../../public/images/meetup.jpg",
-//     adress: "Meetupstreet5, 12345 Meetup City",
-//     description:
-//       "This is a first amazing meetup which you definitely should not miss.",
-//   },
-//   {
-//     id: "m2",
-//     title: "This is a second meetup",
-//     image: "../../public/images/meetup.jpg",
-//     adress: "Meetupstreet5, 12345 Meetup City",
-//     description:
-//       "This is a second amazing meetup which you definitely should not miss.",
-//   },
-// ];
 
 export function PageAllMeetups() {
   const { isLoading, loadedMeetups } = useContext(AppContext);
