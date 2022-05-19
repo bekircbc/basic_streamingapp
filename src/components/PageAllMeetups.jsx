@@ -11,9 +11,9 @@ export function PageAllMeetups() {
         <p>Loading...</p>
       ) : (
         <ul className="allMeetups">
-          {loadedMeetups.map((meetup, index) => {
+          {loadedMeetups.map((meetup) => {
             return (
-              <li key="index">
+              <li key={meetup.id}>
                 <div>
                   <img src={meetup.image} alt="" />
                 </div>
