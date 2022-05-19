@@ -35,7 +35,7 @@ export async function PageAllMeetups() {
   return (
     <section className="allMeetupsPage">
       <h1>All Meetups</h1>
-      {{ isLoading } ? (
+      {isLoading ? (
         <p>Loading...</p>
       ) : (
         <ul className="allMeetups">
