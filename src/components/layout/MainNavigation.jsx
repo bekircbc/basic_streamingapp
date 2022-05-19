@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export function MainNavigation() {
   return (
-    <header>
-      <div>React Meetups</div>
+    <header className="header">
+      <div className="logo">React Meetups</div>
       <nav>
         <ul>
           <li>
