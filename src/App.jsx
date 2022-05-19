@@ -8,8 +8,8 @@ import { PageNewMeetup } from "./components/PageNewMeetup";
 function App() {
   return (
     <div className="App">
-      <div>
-        <h1>React Meetups</h1>
+      <div className="header">
+        <h1 className="logo">React Meetups</h1>
         <nav>
           <span>
             <NavLink to="allmeetups">All Meetups</NavLink>
@@ -23,6 +23,8 @@ function App() {
         </nav>
 
         <Outlet />
+      </div>
+      <div>
         <Routes>
           <Route>
             <Route path="allmeetups" element={<PageAllMeetups />} />

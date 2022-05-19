@@ -8,34 +8,33 @@ body {
     // font-size: 1.6rem;
 
     .header {
-      width: 100%;
+      width: 100vw;
       height: 5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       background-color: #77002e;
-      padding: 0 10%;
+      padding: 0 1rem;
 
       .logo {
         font-size: 2rem;
         color: white;
         font-weight: bold;
+        margin: 1rem;
       }
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      nav {
         display: flex;
-        align-items: baseline;
-        li {
-          margin-left: 3rem;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          margin: 2rem;
           a {
             text-decoration: none;
             font-size: 1.5rem;
             color: #fcb8d2;
-            :hover {
-              color: white;
-            }
+          }
+          :hover {
+            color: white;
           }
         }
       }
