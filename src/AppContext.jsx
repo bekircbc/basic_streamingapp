@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 
-import data from "./components/data/data.json";
+// import data from "./components/data/data.json";
 
 export const AppContext = createContext();
 
@@ -13,19 +13,21 @@ export const AppProvider = ({ children }) => {
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
   useEffect(() => {
-    // (async () => {
-    //   const firebaseMeetups = (await axios.get(firebaseUrl)).data;
-    //   const meetupArray = [];
-
-    //   // setLoadedMeetups((await axios.get(firebaseUrl)).data);
-    //   setLoadedMeetups(meetupArray);
-    //   setIsLoading(false);
-    // })();
-    setTimeout(() => {
+    (async () => {
+      const firebaseObj = (await axios.get(firebaseUrl)).data;
+      const _loadedMeetups = Object.entries(firebaseObj).map(
+        (entry) => entry[1]
+      );
+      console.log(_loadedMeetups);
+      setLoadedMeetups(_loadedMeetups);
       setIsLoading(false);
-      setLoadedMeetups(data);
-    }, 2000);
-  }, [loadedMeetups]);
+    })();
+  }, []);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //     setLoadedMeetups(data);
+  //   }, 2000);
+  // }, [loadedMeetups]);
 
   return (
     <AppContext.Provider

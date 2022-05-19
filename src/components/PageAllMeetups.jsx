@@ -3,7 +3,6 @@ import { AppContext } from "../AppContext";
 
 export function PageAllMeetups() {
   const { isLoading, loadedMeetups } = useContext(AppContext);
-  console.log(loadedMeetups);
   return (
     <section className="allMeetupsPage">
       <h1>All Meetups</h1>
