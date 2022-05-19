@@ -39,7 +39,7 @@ body {
         }
       }
     }
-    section {
+    .allMeetupsPage {
       text-align: center;
       .allMeetups {
         display: flex;
@@ -51,6 +51,59 @@ body {
           width: 300px;
           img {
             height: 300px;
+          }
+        }
+      }
+    }
+    .newMeetupPage {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+
+      .formCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        padding: 1rem;
+        width: 500px;
+        background-color: #c5d1e3;
+        border-radius: 10px;
+        label,
+        textarea,
+        input {
+          width: 450px;
+          margin: 0.2rem;
+        }
+        textarea {
+          border-radius: 10px;
+          border: 1px solid rgb(170, 154, 118);
+          // :focus {
+          //   color: #2196f3;
+          //   border-bottom: 1px solid #2196f3;
+          //   box-shadow: 0 1px 0 0 #2196f3;
+          // }
+        }
+        input {
+          height: 1.5rem;
+          border-radius: 10px;
+          border: 1px solid rgb(170, 154, 118);
+        }
+        button {
+          background-color: #77002e;
+          color: white;
+          width: 25vw;
+          height: 2rem;
+          border-radius: 10px;
+          margin-top: 1rem;
+          font-size: 0.9rem;
+          font-weight: bold;
+          :hover {
+            background-color: white;
+            color: black;
           }
         }
       }
