@@ -12,8 +12,11 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     (async () => {
-      setLoadedMeetups(await axios.get(firebaseUrl));
-      console.log(loadedMeetups);
+      const firebaseMeetups = (await axios.get(firebaseUrl)).data;
+      const meetupArray = [];
+
+      // setLoadedMeetups((await axios.get(firebaseUrl)).data);
+      setLoadedMeetups(meetupArray);
       setIsLoading(false);
     })();
   }, []);
