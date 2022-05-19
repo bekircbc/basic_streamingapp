@@ -19,7 +19,7 @@ const DummyData = [
 
 export function PageAllMeetups() {
   return (
-    <section>
+    <section className="allMeetupsPage">
       <h1>All Meetups</h1>
       <ul className="allMeetups">
         {DummyData.map((meetup) => {
