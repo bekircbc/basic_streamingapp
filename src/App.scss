@@ -14,10 +14,10 @@ body {
       align-items: center;
       justify-content: space-between;
       background-color: #77002e;
-      padding: 0 1rem;
+      padding: 0 1rem 0 1rem;
 
       .logo {
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: white;
         font-weight: bold;
         margin: 1rem;
@@ -27,10 +27,10 @@ body {
         align-items: center;
         justify-content: space-between;
         span {
-          margin: 2rem;
+          margin: 1rem;
           a {
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1rem;
             color: #fcb8d2;
           }
           :hover {
