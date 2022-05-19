@@ -23,6 +23,18 @@ export const AppProvider = ({ children }) => {
       setIsLoading(false);
     })();
   }, []);
+
+  function FavoritesContext() {
+    const [userFavorites, setUserFavorites] = useState([]);
+    function addFavoriteHandler() {}
+    function removeFavoriteHandler() {}
+    function itemIsFavoriteHandler() {}
+
+    const context = {
+      favorites: userFavorites,
+      totalFavorites: userFavorites.length,
+    };
+  }
   //   setTimeout(() => {
   //     setIsLoading(false);
   //     setLoadedMeetups(data);
