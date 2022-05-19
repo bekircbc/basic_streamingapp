@@ -16,6 +16,7 @@ export const AppProvider = ({ children }) => {
     })();
     setIsLoading(false);
     setLoadedMeetups(data);
+    console.log(loadedMeetups);
   }, []);
 
   return (

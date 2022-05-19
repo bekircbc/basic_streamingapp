@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../AppContext";
 // const DummyData = [
 //   {
 //     id: "m1",
@@ -19,21 +20,8 @@ import { useEffect, useState } from "react";
 // ];
 
 export function PageAllMeetups() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadedMeetups, setLoadedMeetups] = useState([]);
-  useEffect(() => {
-    fetch(
-      "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json"
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setIsLoading(false);
-        setLoadedMeetups(data);
-      });
-  }, []);
-
+  const { isLoading, loadedMeetups } = useContext(AppContext);
+  console.log(loadedMeetups);
   return (
     <section className="allMeetupsPage">
       <h1>All Meetups</h1>
