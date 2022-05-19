@@ -1,46 +1,28 @@
-mport { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const AppContext = createContext();
 
-const firebaseUrl = "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json"";
+const firebaseUrl =
+  "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json";
 
 export const AppProvider = ({ children }) => {
-  const [books, setBooks] = useState([]);
-  const [members, setMembers] = useState([]);
-  const siteTitle = "The Online Book Club";
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedMeetups, setLoadedMeetups] = useState([]);
 
   useEffect(() => {
     (async () => {
-      setBooks((await axios.get(bookUrl)).data);
+      setLoadedMeetups((await axios.get(firebaseUrl)).data);
     })();
+    setIsLoading(false);
+    setLoadedMeetups(data);
   }, []);
-
-  useEffect(() => {
-    (async () => {
-      setMembers((await axios.get(memberUrl)).data);
-    })();
-  }, []);
-
-  const handleDelete = (book) => {
-    const _books = books.filter((m) => m.id !== book.id);
-    setBooks(_books);
-  };
-
-  const handleEdit = (book) => {
-    book.title = book.title + " - FINISHED";
-    setBooks([...books]);
-  };
 
   return (
     <AppContext.Provider
       value={{
-        siteTitle,
-        books,
-        setBooks,
-        members,
-        handleDelete,
-        handleEdit,
+        isLoading,
+        loadedMeetups,
       }}
     >
       {children}

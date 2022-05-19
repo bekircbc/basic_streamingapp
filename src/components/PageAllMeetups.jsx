@@ -34,8 +34,6 @@ export function PageAllMeetups() {
       });
   }, []);
 
-  console.log(loadedMeetups);
-
   return (
     <section className="allMeetupsPage">
       <h1>All Meetups</h1>
