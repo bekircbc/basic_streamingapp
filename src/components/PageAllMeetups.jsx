@@ -18,21 +18,20 @@ import { useEffect, useState } from "react";
 //   },
 // ];
 
-export async function PageAllMeetups() {
+export function PageAllMeetups() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
   useEffect(() => {
     fetch(
       "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json"
-    ).then((response) => {
-      const data = await response.json();
-      setLoadedMeetups(data);
-      setIsLoading(false);
-    });
-    // .then((data) => {
-    //   setIsLoading(false);
-    //   setLoadedMeetups(data);
-    // });
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setIsLoading(false);
+        setLoadedMeetups(data);
+      });
   }, []);
 
   console.log(loadedMeetups);

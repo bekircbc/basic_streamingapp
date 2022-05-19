@@ -1,7 +1,6 @@
-import { useRef, useHistory } from "react";
+import { useRef } from "react";
 
 export function PageNewMeetup() {
-  const history = useHistory();
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -27,9 +26,7 @@ export function PageNewMeetup() {
         body: JSON.stringify(meetupData),
         headers: { "Content-Type": "application/json" },
       }
-    ).then(() => {
-      history.replace("/");
-    });
+    );
   }
   return (
     <section className="newMeetupPage">
