@@ -1,5 +1,4 @@
-import { useHistory } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useHistory } from "react";
 
 export function PageNewMeetup() {
   const history = useHistory();
