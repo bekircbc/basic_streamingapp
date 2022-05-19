@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // const DummyData = [
 //   {
 //     id: "m1",
@@ -18,19 +18,23 @@ import { useState } from "react";
 //   },
 // ];
 
-export async function PageAllMeetups() {
+export function PageAllMeetups() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
-  await fetch(
-    "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json"
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      setIsLoading(false);
-      setLoadedMeetups(data);
-    });
+  useEffect(() => {
+    fetch(
+      "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setIsLoading(false);
+        setLoadedMeetups(data);
+      });
+  }, []);
+
+  console.log(loadedMeetups);
 
   return (
     <section className="allMeetupsPage">
@@ -39,9 +43,9 @@ export async function PageAllMeetups() {
         <p>Loading...</p>
       ) : (
         <ul className="allMeetups">
-          {loadedMeetups.map((meetup) => {
+          {loadedMeetups.map((meetup, index) => {
             return (
-              <li key={meetup.id}>
+              <li key="index">
                 <div>
                   <img src={meetup.image} alt="" />
                 </div>
