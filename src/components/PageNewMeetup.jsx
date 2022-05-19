@@ -40,7 +40,7 @@ export function PageNewMeetup() {
           ref={descriptionInputRef}
         ></textarea>
 
-        <button>Add Meetup</button>
+        <button className="btnAddMeetup">Add Meetup</button>
       </form>
     </section>
   );
