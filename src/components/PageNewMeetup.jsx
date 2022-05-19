@@ -18,6 +18,15 @@ export function PageNewMeetup() {
       address: enteredAddress,
       description: enteredDescription,
     };
+
+    fetch(
+      "https://basic-streaming-app-default-rtdb.firebaseio.com/meetups.json",
+      {
+        method: "POST",
+        body: JSON.stringify(meetupData),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
   return (
     <section className="newMeetupPage">
