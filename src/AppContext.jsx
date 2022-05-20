@@ -57,6 +57,7 @@ export const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        userFavorites,
         isLoading,
         loadedMeetups,
         context,
