@@ -59,6 +59,7 @@ export const AppProvider = ({ children }) => {
       value={{
         isLoading,
         loadedMeetups,
+        context,
       }}
     >
       {children}
