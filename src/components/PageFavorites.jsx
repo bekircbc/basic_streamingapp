@@ -4,7 +4,7 @@ import { AppContext } from "../AppContext";
 export function PageFavorites() {
   const { context } = useContext(AppContext);
   return (
-    <div>
+    <div className="pageFavorites">
       <h1>Favorites Page</h1>
       {Object.value(context[1]) !== 0 ? (
         <ul className="allMeetups">
@@ -20,7 +20,7 @@ export function PageFavorites() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button onClick={}>To Favorites</button>
+                  <button>To Favorites</button>
                 </div>
               </li>
             );

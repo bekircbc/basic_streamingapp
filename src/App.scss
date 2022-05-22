@@ -1,5 +1,11 @@
 body {
   background-color: #f3dde5;
+  background-image: url("./images/icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position-y: top;
+  background-position-x: center;
 
   .App {
     // color: red;
@@ -17,10 +23,17 @@ body {
       padding: 0 1rem 0 1rem;
 
       .logo {
-        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
         color: white;
         font-weight: bold;
         margin: 1rem;
+        img {
+          width: 70px;
+        }
       }
       nav {
         display: flex;
@@ -42,6 +55,7 @@ body {
     }
     .allMeetupsPage {
       text-align: center;
+
       .allMeetups {
         display: flex;
         justify-content: center;
@@ -110,6 +124,9 @@ body {
           }
         }
       }
+    }
+    .pageFavorites {
+      display: flex;
     }
   }
 }

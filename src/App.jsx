@@ -9,7 +9,10 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1 className="logo">React Meetups</h1>
+        <div className="logo">
+          <img src="./images/icon.png" alt="logo" />
+          <h1>Meetup Getup</h1>
+        </div>
         <nav>
           <span>
             <NavLink to="allmeetups">All Meetups</NavLink>
