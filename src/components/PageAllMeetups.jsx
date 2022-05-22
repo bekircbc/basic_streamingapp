@@ -2,20 +2,12 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export function PageAllMeetups() {
-  const {
-    isLoading,
-    loadedMeetups,
-    userFavorites,
-    itemIsFavoriteHandler,
-    addFavoriteHandler,
-    removeFavoriteHandler,
-  } = useContext(AppContext);
+  const { isLoading, loadedMeetups, itemIsFavorite, addFavorite } =
+    useContext(AppContext);
 
   function toggleFavoriteStatusHandler(meetup) {
-    const itemIsFavorite = userFavorites.itemIsFavoriteHandler(meetup.id);
-    itemIsFavorite
-      ? userFavorites.itemIsFavoriteHandler(meetup.id)
-      : userFavorites.addFavoriteHandler(meetup);
+    const itemIsFavorite = itemIsFavorite(meetup.id);
+    itemIsFavorite === false && addFavorite(meetup);
   }
 
   return (

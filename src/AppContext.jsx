@@ -10,6 +10,8 @@ export const AppProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
+  const [userFavorites, setUserFavorites] = useState([]);
+
   useEffect(() => {
     (async () => {
       const firebaseObj = (await axios.get(firebaseUrl)).data;
@@ -21,8 +23,6 @@ export const AppProvider = ({ children }) => {
       setIsLoading(false);
     })();
   }, []);
-
-  const [userFavorites, setUserFavorites] = useState([]);
 
   function addFavoriteHandler(favoriteMeetup) {
     setUserFavorites((prevUserFavorites) => {
@@ -44,9 +44,9 @@ export const AppProvider = ({ children }) => {
         isLoading,
         loadedMeetups,
         userFavorites,
-        addFavoriteHandler,
-        removeFavoriteHandler,
-        itemIsFavoriteHandler,
+        addFavorite: addFavoriteHandler(favoriteMeetup),
+        removeFavorite: removeFavoriteHandler(meetupId),
+        itemIsFavorite: itemIsFavoriteHandler(meetupId),
       }}
     >
       {children}
