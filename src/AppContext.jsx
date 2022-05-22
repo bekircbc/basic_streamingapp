@@ -1,8 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
-// import data from "./components/data/data.json";
-
 export const AppContext = createContext();
 
 const firebaseUrl =
@@ -48,19 +46,14 @@ export const AppProvider = ({ children }) => {
     itemIsFavorite: itemIsFavoriteHandler,
   };
 
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //     setLoadedMeetups(data);
-  //   }, 2000);
-  // }, [loadedMeetups]);
-
   return (
     <AppContext.Provider
       value={{
         userFavorites,
         isLoading,
         loadedMeetups,
-        context,
+        addFavoriteHandler,
+        itemIsFavoriteHandler,
       }}
     >
       {children}

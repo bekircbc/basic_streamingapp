@@ -20,7 +20,7 @@ export function PageFavorites() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button>To Favorites</button>
+                  <button onClick={}>To Favorites</button>
                 </div>
               </li>
             );
