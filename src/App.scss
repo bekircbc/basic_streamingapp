@@ -1,11 +1,11 @@
 body {
-  background-color: #f3dde5;
   background-image: url("./images/icon.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-position-y: top;
   background-position-x: center;
+  background-color: #f3dde5;
 
   .App {
     // color: red;
@@ -32,7 +32,7 @@ body {
         font-weight: bold;
         margin: 1rem;
         img {
-          width: 70px;
+          width: 80px;
         }
       }
       nav {
