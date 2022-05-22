@@ -5,11 +5,18 @@ export function PageAllMeetups() {
   const { isLoading, loadedMeetups, context } = useContext(AppContext);
 
   const itemIsFavorite = context.itemIsFavorite(meetup.id);
+  console.log(itemIsFavorite);
 
-  function toggleFavoriteStatusHandler() {
+  function toggleFavoriteStatusHandler(meetup) {
     itemIsFavorite
       ? context.removeFavorite(meetup.id)
-      : context.addFavorite({ meetup });
+      : context.addFavorite({
+          id: meetup.id,
+          image: meetup.image,
+          title: meetup.title,
+          address: meetup.address,
+          description: meetup.description,
+        });
   }
 
   return (
@@ -31,7 +38,7 @@ export function PageAllMeetups() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button onClick={toggleFavoriteStatusHandler}>
+                  <button onClick={toggleFavoriteStatusHandler(meetup)}>
                     {itemIsFavorite ? "Remove from Favorites" : "To Favorites"}
                   </button>
                 </div>

@@ -6,9 +6,9 @@ export function PageFavorites() {
   return (
     <div className="pageFavorites">
       <h1>Favorites Page</h1>
-      {Object.value(context[1]) !== 0 ? (
-        <ul className="allMeetups">
-          {context.map((meetup) => {
+      {context.totalFavorites !== 0 ? (
+        <ul className="favoriteMeetups">
+          {context.userFavorites.map((meetup) => {
             return (
               <li key={meetup.id}>
                 <div>
@@ -20,7 +20,9 @@ export function PageFavorites() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button>To Favorites</button>
+                  <button onClick={removeFavoriteHandler(meetup.id)}>
+                    Remove from Favorites
+                  </button>
                 </div>
               </li>
             );

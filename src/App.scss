@@ -126,7 +126,23 @@ body {
       }
     }
     .pageFavorites {
-      display: flex;
+      text-align: center;
+
+      .favoriteMeetups {
+        display: flex;
+        justify-content: center;
+        li {
+          text-decoration: none;
+          list-style: none;
+          margin: 1rem;
+          width: 300px;
+        }
+        img {
+          width: 250px;
+          height: 200px;
+          border-radius: 10px;
+        }
+      }
     }
   }
 }
