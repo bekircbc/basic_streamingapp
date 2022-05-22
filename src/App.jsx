@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <div className="header">
         <div className="logo">
-          <img src="./images/icon.png" alt="logo" />
+          <img src="./images/icon1.gif" alt="logo" />
           <h1>Meetup Getup</h1>
         </div>
         <nav>
