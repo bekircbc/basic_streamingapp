@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export function PageFavorites() {
-  const { userFavorites, removeFavorite } = useContext(AppContext);
+  const { userFavorites, removeFavoriteHandler } = useContext(AppContext);
   return (
     <div className="pageFavorites">
       <h1>Favorites Page</h1>
@@ -20,7 +20,7 @@ export function PageFavorites() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button onClick={removeFavorite(meetup.id)}>
+                  <button onClick={removeFavoriteHandler(meetup.id)}>
                     Remove from Favorites
                   </button>
                 </div>

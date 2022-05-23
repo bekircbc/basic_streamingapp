@@ -11,6 +11,7 @@ export const AppProvider = ({ children }) => {
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
   const [userFavorites, setUserFavorites] = useState([]);
+  const [isItemFavorite, setIsItemFavorite] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -41,6 +42,8 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         isLoading,
+        isItemFavorite,
+        setIsItemFavorite,
         loadedMeetups,
         userFavorites,
         addFavoriteHandler,
