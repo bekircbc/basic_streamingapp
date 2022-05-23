@@ -18,7 +18,6 @@ export const AppProvider = ({ children }) => {
       const _loadedMeetups = Object.entries(firebaseObj).map(
         (entry) => entry[1]
       );
-      console.log(_loadedMeetups);
       setLoadedMeetups(_loadedMeetups);
       setIsLoading(false);
     })();
@@ -44,9 +43,9 @@ export const AppProvider = ({ children }) => {
         isLoading,
         loadedMeetups,
         userFavorites,
-        addFavorite: addFavoriteHandler(favoriteMeetup),
-        removeFavorite: removeFavoriteHandler(meetupId),
-        itemIsFavorite: itemIsFavoriteHandler(meetupId),
+        addFavoriteHandler,
+        removeFavoriteHandler,
+        itemIsFavoriteHandler,
       }}
     >
       {children}
