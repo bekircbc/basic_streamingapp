@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
+import { useState } from "react";
 
 export function PageAllMeetups() {
   const {
@@ -9,11 +10,11 @@ export function PageAllMeetups() {
     addFavoriteHandler,
   } = useContext(AppContext);
 
-  let _itemIsFavorite;
+  const [isItemFavorite, setIsItemFavorite] = useState(false);
 
   function toggleFavoriteStatusHandler(meetupId) {
-    _itemIsFavorite = itemIsFavoriteHandler(meetupId);
-    _itemIsFavorite === false && addFavoriteHandler(meetupId);
+    setIsItemFavorite(itemIsFavoriteHandler(meetupId));
+    isItemFavorite === false && addFavoriteHandler(meetupId);
   }
 
   return (
