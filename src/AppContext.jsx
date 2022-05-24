@@ -11,6 +11,15 @@ export const AppProvider = ({ children }) => {
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
   const [userFavorites, setUserFavorites] = useState([]);
+  //   {
+  //     id: "m1",
+  //     title: "This is a first meetup",
+  //     image: "../../public/images/meetup.jpg",
+  //     adress: "Meetupstreet5, 12345 Meetup City",
+  //     Description:
+  //       "This is a first amazing meetup which you definitely should not miss.",
+  //   },
+  // ]);
   const [isItemFavorite, setIsItemFavorite] = useState();
   const [addRemoveFavorites, setAddRemoveFavorites] = useState();
 
