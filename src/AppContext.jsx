@@ -12,6 +12,7 @@ export const AppProvider = ({ children }) => {
 
   const [userFavorites, setUserFavorites] = useState([]);
   const [isItemFavorite, setIsItemFavorite] = useState();
+  const [addRemoveFavorites, setAddRemoveFavorites] = useState();
 
   useEffect(() => {
     (async () => {
@@ -42,17 +43,28 @@ export const AppProvider = ({ children }) => {
     });
   }
 
+  function toggleFavoriteStatusHandler(meetupId) {
+    if (itemIsFavoriteHandler(meetupId) === false) {
+      addFavoriteHandler(meetupId);
+      setAddRemoveFavorites("Remove from Favorites");
+    } else {
+      setAddRemoveFavorites("Add to Favorites");
+    }
+  }
+
   return (
     <AppContext.Provider
       value={{
         isLoading,
         isItemFavorite,
         setIsItemFavorite,
+        addRemoveFavorites,
         loadedMeetups,
         userFavorites,
         addFavoriteHandler,
         removeFavoriteHandler,
         itemIsFavoriteHandler,
+        toggleFavoriteStatusHandler,
       }}
     >
       {children}
