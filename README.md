@@ -6,14 +6,14 @@
 
 ## Before Using
 
+- git clone
+
 - npm i
 
 - "npm run dev"
 
 ## Webpage Links
 
-- Netlify - [https://frontend-reactvite-showcase.netlify.app/]
+- Netlify - [https://meetup-getup-app.netlify.app/]
 
-- Vercel - [https://frontend-reactvite-showcase.vercel.app/]
-
-- Cloudflare - []
+- Vercel - [https://basic-streamingapp.vercel.app/]
