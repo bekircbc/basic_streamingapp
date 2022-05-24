@@ -45,8 +45,8 @@ export const AppProvider = ({ children }) => {
 
   function toggleFavoriteStatusHandler(meetupId) {
     if (itemIsFavoriteHandler(meetupId) === false) {
-      const addMeetup = _userFavorites.find((m) => meetupId === m.id);
-      addFavoriteHandler(addMeetup);
+      const favoriteMeetup = userFavorites.find((m) => meetupId === m.id);
+      addFavoriteHandler(favoriteMeetup);
       setAddRemoveFavorites("Remove from Favorites");
     } else {
       setAddRemoveFavorites("Add to Favorites");
