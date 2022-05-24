@@ -59,6 +59,7 @@ body {
       .allMeetups {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         li {
           text-decoration: none;
           list-style: none;
@@ -131,6 +132,7 @@ body {
       .favoriteMeetups {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         li {
           text-decoration: none;
           list-style: none;
