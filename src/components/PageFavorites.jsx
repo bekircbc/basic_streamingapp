@@ -2,13 +2,17 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export function PageFavorites() {
-  const { userFavorites, removeFavoriteHandler } = useContext(AppContext);
+  const { loadedMeetups, toggleFavoriteStatusHandler } = useContext(AppContext);
+  const filteredMeetups = loadedMeetups.filter((m) => m.isFavorite);
+
   return (
     <div className="pageFavorites">
       <h1>Favorites Page</h1>
-      {userFavorites.length > 0 ? (
+      <pre>{JSON.stringify(filteredMeetups, null, 2)}</pre>
+
+      {filteredMeetups.length > 0 ? (
         <ul className="favoriteMeetups">
-          {userFavorites.map((meetup) => {
+          {filteredMeetups.map((meetup) => {
             return (
               <li key={meetup.id}>
                 <div>
@@ -20,7 +24,7 @@ export function PageFavorites() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button onClick={() => removeFavoriteHandler(meetup.id)}>
+                  <button onClick={() => toggleFavoriteStatusHandler(meetup)}>
                     Remove from Favorites
                   </button>
                 </div>

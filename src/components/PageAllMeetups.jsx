@@ -5,7 +5,7 @@ export function PageAllMeetups() {
   const {
     isLoading,
     loadedMeetups,
-    addRemoveFavorites,
+    // addRemoveFavorites,
     toggleFavoriteStatusHandler,
   } = useContext(AppContext);
 
@@ -28,11 +28,9 @@ export function PageAllMeetups() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button
-                    onClick={() => toggleFavoriteStatusHandler(meetup.id)}
-                  >
-                    {addRemoveFavorites
-                      ? addRemoveFavorites
+                  <button onClick={() => toggleFavoriteStatusHandler(meetup)}>
+                    {meetup.isFavorite
+                      ? "Remove from Favorites"
                       : "Add to Favorites"}
                   </button>
                 </div>

@@ -10,7 +10,7 @@ export const AppProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
-  const [userFavorites, setUserFavorites] = useState([]);
+  // const [userFavorites, setUserFavorites] = useState([
   //   {
   //     id: "m1",
   //     title: "This is a first meetup",
@@ -20,8 +20,8 @@ export const AppProvider = ({ children }) => {
   //       "This is a first amazing meetup which you definitely should not miss.",
   //   },
   // ]);
-  const [isItemFavorite, setIsItemFavorite] = useState();
-  const [addRemoveFavorites, setAddRemoveFavorites] = useState();
+  // const [isItemFavorite, setIsItemFavorite] = useState();
+  // const [addRemoveFavorites, setAddRemoveFavorites] = useState();
 
   useEffect(() => {
     (async () => {
@@ -34,47 +34,37 @@ export const AppProvider = ({ children }) => {
     })();
   }, []);
 
-  function addFavoriteHandler(favoriteMeetup) {
-    setUserFavorites(() => {
-      return userFavorites.push(favoriteMeetup);
-    });
-  }
+  // function addFavoriteHandler(favoriteMeetup) {
+  //   setUserFavorites(() => {
+  //     return userFavorites.push(favoriteMeetup);
+  //   });
+  // }
 
-  function removeFavoriteHandler(meetupId) {
-    setUserFavorites(() => {
-      return userFavorites.filter((meetup) => meetup.id !== meetupId);
-    });
-  }
+  // function removeFavoriteHandler(meetupId) {
+  //   setUserFavorites(() => {
+  //     return userFavorites.filter((meetup) => meetup.id !== meetupId);
+  //   });
+  // }
 
-  function itemIsFavoriteHandler(meetupId) {
-    setIsItemFavorite(() => {
-      return userFavorites.some((meetup) => meetup.id === meetupId);
-    });
-  }
+  // function itemIsFavoriteHandler(meetupId) {
+  //   setIsItemFavorite(() => {
+  //     return userFavorites.some((meetup) => meetup.id === meetupId);
+  //   });
+  // }
 
-  function toggleFavoriteStatusHandler(meetupId) {
-    const isFavorite = itemIsFavoriteHandler(meetupId);
-    if (isFavorite === false) {
-      // const favoriteMeetup = userFavorites.find((m) => meetupId === m.id);
-      // addFavoriteHandler(favoriteMeetup);
-      setAddRemoveFavorites("Remove from Favorites");
-    } else {
-      setAddRemoveFavorites("Add to Favorites");
-    }
+  function toggleFavoriteStatusHandler(meetup) {
+    meetup.isFavorite = !meetup.isFavorite;
+    setLoadedMeetups([...loadedMeetups]);
+    // const favoriteMeetup = userFavorites.find((m) => meetupId === m.id);
+    // addFavoriteHandler(favoriteMeetup);
+    // setAddRemoveFavorites("Remove from Favorites");
   }
 
   return (
     <AppContext.Provider
       value={{
         isLoading,
-        isItemFavorite,
-        setIsItemFavorite,
-        addRemoveFavorites,
         loadedMeetups,
-        userFavorites,
-        addFavoriteHandler,
-        removeFavoriteHandler,
-        itemIsFavoriteHandler,
         toggleFavoriteStatusHandler,
       }}
     >
