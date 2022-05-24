@@ -15,7 +15,10 @@ export function PageFavorites() {
             return (
               <li key={meetup.id}>
                 <div>
-                  <img src={meetup.image} alt="" />
+                  <img
+                    src={`images/meetup-${meetup.id}.jpg`}
+                    alt={meetup.title}
+                  />
                 </div>
                 <div>
                   <h3>{meetup.title}</h3>
