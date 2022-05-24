@@ -2,12 +2,8 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export function PageAllMeetups() {
-  const {
-    isLoading,
-    loadedMeetups,
-    // addRemoveFavorites,
-    toggleFavoriteStatusHandler,
-  } = useContext(AppContext);
+  const { isLoading, loadedMeetups, toggleFavoriteStatusHandler } =
+    useContext(AppContext);
 
   return (
     <section className="allMeetupsPage">

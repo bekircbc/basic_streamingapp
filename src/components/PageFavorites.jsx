@@ -7,8 +7,7 @@ export function PageFavorites() {
 
   return (
     <div className="pageFavorites">
-      <h1>Favorites Page</h1>
-      <pre>{JSON.stringify(filteredMeetups, null, 2)}</pre>
+      <h1>My Favorites</h1>
 
       {filteredMeetups.length > 0 ? (
         <ul className="favoriteMeetups">
