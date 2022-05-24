@@ -30,7 +30,7 @@ export function PageNewMeetup() {
   }
   return (
     <section className="newMeetupPage">
-      <h1>New Meetup Page</h1>
+      <h1>Add New Meetup</h1>
       <form className="formCard" onSubmit={submitHandler}>
         <label htmlFor="title">Meetup Title</label>
         <input type="text" required id="title" ref={titleInputRef} />
