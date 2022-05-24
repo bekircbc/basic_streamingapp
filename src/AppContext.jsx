@@ -11,7 +11,7 @@ export const AppProvider = ({ children }) => {
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
   const [userFavorites, setUserFavorites] = useState([]);
-  const [isItemFavorite, setIsItemFavorite] = useState(false);
+  const [isItemFavorite, setIsItemFavorite] = useState();
 
   useEffect(() => {
     (async () => {
@@ -24,20 +24,20 @@ export const AppProvider = ({ children }) => {
     })();
   }, []);
 
+  const _userFavorites = userFavorites;
+
   function addFavoriteHandler(favoriteMeetup) {
-    const _userFavorites = userFavorites;
     setUserFavorites(() => {
       return _userFavorites.push(favoriteMeetup);
     });
   }
   function removeFavoriteHandler(meetupId) {
-    const _userFavorites = userFavorites;
     setUserFavorites(() => {
       return _userFavorites.filter((meetup) => meetup.id !== meetupId);
     });
   }
   function itemIsFavoriteHandler(meetupId) {
-    return userFavorites.some((meetup) => meetup.id === meetupId);
+    return _userFavorites.some((meetup) => meetup.id === meetupId);
   }
 
   return (
