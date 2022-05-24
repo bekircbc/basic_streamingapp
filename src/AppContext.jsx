@@ -25,13 +25,15 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   function addFavoriteHandler(favoriteMeetup) {
-    setUserFavorites((prevUserFavorites) => {
-      return prevUserFavorites.concat(favoriteMeetup);
+    const _userFavorites = userFavorites;
+    setUserFavorites(() => {
+      return _userFavorites.push(favoriteMeetup);
     });
   }
   function removeFavoriteHandler(meetupId) {
-    setUserFavorites((prevUserFavorites) => {
-      return prevUserFavorites.filter((meetup) => meetup.id !== meetupId);
+    const _userFavorites = userFavorites;
+    setUserFavorites(() => {
+      return _userFavorites.filter((meetup) => meetup.id !== meetupId);
     });
   }
   function itemIsFavoriteHandler(meetupId) {
