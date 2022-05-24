@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
-import { useState } from "react";
 
 export function PageAllMeetups() {
   const {
