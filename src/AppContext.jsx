@@ -25,23 +25,21 @@ export const AppProvider = ({ children }) => {
     })();
   }, []);
 
-  const _userFavorites = userFavorites;
-
   function addFavoriteHandler(favoriteMeetup) {
     setUserFavorites(() => {
-      return _userFavorites.push(favoriteMeetup);
+      return userFavorites.push(favoriteMeetup);
     });
   }
 
   function removeFavoriteHandler(meetupId) {
     setUserFavorites(() => {
-      return _userFavorites.filter((meetup) => meetup.id !== meetupId);
+      return userFavorites.filter((meetup) => meetup.id !== meetupId);
     });
   }
 
   function itemIsFavoriteHandler(meetupId) {
     setIsItemFavorite(() => {
-      return _userFavorites.some((meetup) => meetup.id === meetupId);
+      return userFavorites.some((meetup) => meetup.id === meetupId);
     });
   }
 

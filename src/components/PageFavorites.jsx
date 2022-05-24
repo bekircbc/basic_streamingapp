@@ -6,7 +6,7 @@ export function PageFavorites() {
   return (
     <div className="pageFavorites">
       <h1>Favorites Page</h1>
-      {userFavorites.length !== 0 ? (
+      {userFavorites.length > 0 ? (
         <ul className="favoriteMeetups">
           {userFavorites.map((meetup) => {
             return (
