@@ -28,7 +28,9 @@ export function PageAllMeetups() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button onClick={toggleFavoriteStatusHandler(meetup.id)}>
+                  <button
+                    onClick={() => toggleFavoriteStatusHandler(meetup.id)}
+                  >
                     {addRemoveFavorites}
                   </button>
                 </div>

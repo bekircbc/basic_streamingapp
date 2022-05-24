@@ -20,7 +20,7 @@ export function PageFavorites() {
                   <p>{meetup.description}</p>
                 </div>
                 <div>
-                  <button onClick={removeFavoriteHandler(meetup.id)}>
+                  <button onClick={() => removeFavoriteHandler(meetup.id)}>
                     Remove from Favorites
                   </button>
                 </div>

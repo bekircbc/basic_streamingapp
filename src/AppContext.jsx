@@ -32,11 +32,13 @@ export const AppProvider = ({ children }) => {
       return _userFavorites.push(favoriteMeetup);
     });
   }
+
   function removeFavoriteHandler(meetupId) {
     setUserFavorites(() => {
       return _userFavorites.filter((meetup) => meetup.id !== meetupId);
     });
   }
+
   function itemIsFavoriteHandler(meetupId) {
     setIsItemFavorite(() => {
       return _userFavorites.some((meetup) => meetup.id === meetupId);
@@ -45,7 +47,8 @@ export const AppProvider = ({ children }) => {
 
   function toggleFavoriteStatusHandler(meetupId) {
     if (itemIsFavoriteHandler(meetupId) === false) {
-      addFavoriteHandler(meetupId);
+      const addMeetup = _userFavorites.find((m) => meetupId === m.id);
+      addFavoriteHandler(addMeetup);
       setAddRemoveFavorites("Remove from Favorites");
     } else {
       setAddRemoveFavorites("Add to Favorites");
