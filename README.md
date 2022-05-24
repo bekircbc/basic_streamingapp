@@ -1,19 +1,19 @@
-# Video Streaming App
+## Meetup Getup
 
-- Main goal is to create a SAP with React
+- programmed with scss and react. created with vite.
 
-- Next step will be Imigration to React-Native
+- als server user firebase.
 
-# First Steps to constructure this Webpage
+## Before Using
 
-- npm create vite
+- npm i
 
--- name for the project added
--- choose react
--- choose react
+- "npm run dev"
 
-# Links of Webpage
+## Webpage Links
 
-- ()[]
+- Netlify - [https://frontend-reactvite-showcase.netlify.app/]
 
-- ()[]
+- Vercel - [https://frontend-reactvite-showcase.vercel.app/]
+
+- Cloudflare - []
