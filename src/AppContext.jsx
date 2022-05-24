@@ -37,7 +37,9 @@ export const AppProvider = ({ children }) => {
     });
   }
   function itemIsFavoriteHandler(meetupId) {
-    return _userFavorites.some((meetup) => meetup.id === meetupId);
+    setIsItemFavorite(() => {
+      return _userFavorites.some((meetup) => meetup.id === meetupId);
+    });
   }
 
   return (
