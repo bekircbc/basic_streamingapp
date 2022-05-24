@@ -31,7 +31,9 @@ export function PageAllMeetups() {
                   <button
                     onClick={() => toggleFavoriteStatusHandler(meetup.id)}
                   >
-                    {addRemoveFavorites}
+                    {addRemoveFavorites
+                      ? addRemoveFavorites
+                      : "Add to Favorites"}
                   </button>
                 </div>
               </li>
