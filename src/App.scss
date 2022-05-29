@@ -7,10 +7,10 @@ body {
   background-position-x: center;
   background-color: #ffffff;
 
-  // img {
-  //   width: 20rem;
-  //   height: 20rem;
-  // }
+  img {
+    width: 20rem;
+    height: 20rem;
+  }
 
   .App {
     .header {
@@ -21,7 +21,6 @@ body {
       justify-content: space-between;
       background-color: #073761;
       padding: 0 1rem 0 1rem;
-      font-size: 1.5rem;
 
       .logo {
         display: flex;
@@ -31,7 +30,7 @@ body {
         font-size: 1rem;
         color: white;
         font-weight: bold;
-        margin: 1rem;
+        margin: 0.7rem;
         img {
           width: 4rem;
           height: 4rem;
@@ -138,10 +137,19 @@ body {
         }
         img {
           width: 22rem;
-          height: 20rem;
+          height: 22rem;
           border-radius: 0.7rem;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    img {
+      width: 10rem;
+      height: 10rem;
     }
   }
 }

@@ -11,7 +11,7 @@ function App() {
       <div className="header">
         <div className="logo">
           <img src="./images/icon.png" alt="logo" />
-          <h1>Meetup Getup</h1>
+          <h2>Meetup Getup</h2>
         </div>
         <nav>
           <span>
