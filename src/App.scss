@@ -7,6 +7,11 @@ body {
   background-position-x: center;
   background-color: #ffffff;
 
+  img {
+    width: 70vw;
+    height: 70vh;
+  }
+
   .App {
     .header {
       width: 100vw;
@@ -21,13 +26,13 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 1rem;
         font-size: 1rem;
         color: white;
         font-weight: bold;
         margin: 1rem;
         img {
-          width: 80px;
+          width: 4rem;
         }
       }
       nav {
@@ -59,12 +64,12 @@ body {
           text-decoration: none;
           list-style: none;
           margin: 1rem;
-          width: 300px;
+          width: 25rem;
         }
         img {
-          width: 250px;
-          height: 200px;
-          border-radius: 10px;
+          width: 22rem;
+          height: 22rem;
+          border-radius: 0.7rem;
         }
       }
     }
@@ -82,22 +87,22 @@ body {
         align-items: center;
         border: 1px solid black;
         padding: 1rem;
-        width: 500px;
+        width: 32rem;
         background-color: #c5d1e3;
-        border-radius: 10px;
+        border-radius: 0.7rem;
         label,
         textarea,
         input {
-          width: 450px;
+          width: 25rem;
           margin: 0.2rem;
         }
         textarea {
-          border-radius: 10px;
+          border-radius: 0.7rem;
           border: 1px solid rgb(170, 154, 118);
         }
         input {
           height: 1.5rem;
-          border-radius: 10px;
+          border-radius: 0.7rem;
           border: 1px solid rgb(170, 154, 118);
         }
         .btnAddMeetup {
@@ -105,7 +110,7 @@ body {
           color: white;
           width: 25vw;
           height: 2rem;
-          border-radius: 10px;
+          border-radius: 0.7rem;
           margin-top: 1rem;
           font-size: 0.9rem;
           font-weight: bold;
@@ -127,12 +132,12 @@ body {
           text-decoration: none;
           list-style: none;
           margin: 1rem;
-          width: 300px;
+          width: 25rem;
         }
         img {
-          width: 250px;
-          height: 200px;
-          border-radius: 10px;
+          width: 22rem;
+          height: 20rem;
+          border-radius: 0.7rem;
         }
       }
     }
