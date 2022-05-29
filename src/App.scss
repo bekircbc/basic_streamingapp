@@ -7,10 +7,10 @@ body {
   background-position-x: center;
   background-color: #ffffff;
 
-  img {
-    width: 70vw;
-    height: 70vh;
-  }
+  // img {
+  //   width: 20rem;
+  //   height: 20rem;
+  // }
 
   .App {
     .header {
@@ -21,6 +21,7 @@ body {
       justify-content: space-between;
       background-color: #073761;
       padding: 0 1rem 0 1rem;
+      font-size: 1.5rem;
 
       .logo {
         display: flex;
@@ -33,6 +34,7 @@ body {
         margin: 1rem;
         img {
           width: 4rem;
+          height: 4rem;
         }
       }
       nav {
@@ -87,13 +89,13 @@ body {
         align-items: center;
         border: 1px solid black;
         padding: 1rem;
-        width: 32rem;
+        width: 30rem;
         background-color: #c5d1e3;
         border-radius: 0.7rem;
         label,
         textarea,
         input {
-          width: 25rem;
+          width: 27rem;
           margin: 0.2rem;
         }
         textarea {
