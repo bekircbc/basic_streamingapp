@@ -151,5 +151,26 @@ body {
       width: 10rem;
       height: 10rem;
     }
+    .App {
+      .header {
+        display: flex;
+        flex-direction: column;
+        height: 8rem;
+        padding: 0;
+        .logo {
+          margin: 0.5rem;
+          img {
+            width: 3rem;
+            height: 3rem;
+          }
+        }
+        nav {
+          margin: 0.5rem;
+          span {
+            margin: 0.5rem;
+          }
+        }
+      }
+    }
   }
 }
